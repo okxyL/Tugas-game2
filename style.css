@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .bg{
+    position: relative;
+    background: url(bg.jpg) ;
+    height: 100VH;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: animate 7s linear infinite;
+  }
+  
+  .mobil{
+    position: absolute;
+    bottom: -200px;
+  }
+  
+  .batu{
+    position: absolute;
+    bottom: 150px;
+    animation: batu 2.76s linear infinite;
+  }
+  
+  .animate{
+    animation: jump 900ms infinite;
+  }
+  
+  .score{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  @keyframes animate {
+    from{
+      background-position: 0 0;
+    }to{
+      background-position: 100% 0;
+    }
+  }
+  
+  @keyframes batu{
+    from{
+      left: 8450px;
+    }to{
+      left: -200px;
+    }
+  }
+  
+  @keyframes jump {
+    0%{
+      bottom: -200px;
+    }
+    30%{
+      bottom: 400px;
+    }
+    70%{
+      bottom: 400px;
+    }
+    100%{
+      bottom: -4000px;
+    }
+  }

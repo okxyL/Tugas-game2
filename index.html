@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" onkeypress="jump()" 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 2 Hasbih</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="bg">
+      <div class="score" id="score">Score : 0</div>
+      <div class="batu" id="batu">
+        <img src="batu.png" width="600px" alt="">
+      </div>
+      <div class="mobil" id="mobil">
+        <img src="giphy.gif" width="1200px" alt="">
+      </div>
+    </div>
+  </body>
+  <script>
+    const char = document.getElementById("mobil")
+    const batu = document.getElementById("batu")
+    const playerScore = document.getElementById("score")
+
+    let score = 0;
+    let interval = null;
+
+    let jumlahScore = () => {
+      score++;
+      playerScore.innerHTML = `Score : ${score} `
+    };
+
+    function jump(){
+      if(char.classList != "animate"){
+        char.classList.add("animate");
+      }
+      setTimeout(function(){
+        char.classList.remove("animate")
+      },500)
+        let score = 0
+        interval = setInterval(jumlahScore, 100)
+      }
+
+      const ifHitBatu = setInterval(function(){
+        const charBottom = parseInt(window.getComputedStyle(char).getPropertyValue("bottom"))
+        const batuLeft = parseInt(window.getComputedStyle(batu).getPropertyValue("left"))
+      if(batuLeft < 800 && batuLeft > 0 && charBottom <=0 ){
+        batu.style.animation = "none"
+        batu.style.display = "none"
+        if(confirm("YAHAHAHAHA KENA BATU,DIMULAI DARI AWAL DEHH!!!!")){
+          window.location.reload()
+        }
+      }
+      })
+    
+  </script>
+</html>
